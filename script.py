@@ -63,9 +63,9 @@ for i in range(start,len(all_generated_searches)):
     search = all_generated_searches[i]
     print("\n"+search)
     response = requests.get("https://customsearch.googleapis.com/customsearch/v1?key="+API_KEY+"&cx="+search_engine_ID+"&q="+search).json()
-
+    num_excluded =  0
     for item in response["items"]:
-        num_excluded =  0
+
         if item["link"] not in cached_results:#dont bother outputting websites I have already seen this session
             cached_results.append(item["link"])
             print(item["title"])
