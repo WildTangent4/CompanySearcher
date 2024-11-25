@@ -1,3 +1,5 @@
+import os
+
 fields = [
     "Cyber security",
     "Science",
@@ -38,6 +40,7 @@ search_terms = [
     "Company"
 ]
 
+API_KEY = os.environ.get("GOOGLE_SEARCH_API_KEY", "set the environment variable GOOGLE_SEARCH_API_KEY to your project's API key")
 all_generated_searches = []
 
 for field in fields:
