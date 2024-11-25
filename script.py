@@ -22,6 +22,31 @@ locations = [
     "Liverpool",
     "Stockport",
     "Devon",
-    "UK" #might catch companies the smaller regions dont
+    "Didcot",
+    "Cheltenham",
+    "Gloucestershire",
+    "UK" #might catch companies the smaller regions cant
+
 ]
 
+search_terms = [
+    "Start up",
+    "Consultancy",
+    "Goverment body",
+    "Agency",
+    "SME",
+    "Company"
+]
+
+all_generated_searches = []
+
+for field in fields:
+    for location in locations:
+        for search_term in search_terms:
+            all_generated_searches.append(
+                field + " " + search_term + " in " + location
+            )
+
+
+for search in all_generated_searches:
+    print(search)
